@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>School Sports Day Function</h1>
+    <button id="call">Let the games begin</button>
+
+    <script>
+      var score;
+      setTimeout(function OpeningCeremony() {
+        console.log("Let the games begin");
+        score = { red: 0, blue: 0, green: 0, yellow: 0 };
+        setTimeout(function Race100M(score) {
+          score = { red: 10, blue: 11, green: 12, yellow: 13 };
+          for (var i = 0; i < score.length; i++) {
+            if (score[i] == 13) {
+              score[i] = 50;
+            } else if (score[i] == 12) {
+              score = 25;
+            } else {
+              score = 0;
+            }
+            setTimeout(function LongJump(score) {
+              score.red += 150;
+              function HighJump() {
+                let text;
+                let jump = prompt("What color secured the highest jump:", "red");
+                if (jump == null || jump == "") {
+                  text = "Event was cancelled.";
+                } else {
+                  for(var i=0;i<score.length;i++){
+                    if(score[i]==jump){
+                        score[i]+=100;
+                    }
+                  }
+                }
+                function AwardCeremony(score){
+                    console.log(score);
+                    document.getElementById("call").innerHTML = score;
+                }
+              }
+            }, 2000);
+          }
+        }, 3000);
+      }, 1000);
+    </script>
+  </body>
+</html>
